@@ -89,5 +89,9 @@
       <Name>Logic</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\serato.ico" />
+    <Content Include="Resources\serato.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
