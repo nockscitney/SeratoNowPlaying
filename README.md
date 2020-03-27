@@ -18,3 +18,6 @@ Rather than trying to open and read the Serato library files directly (and while
 4. Enable Live-Playlists as per the Serato article linked above (this part can be a little fiddly and you may need to restart Serato after doing this)
 5. Click the "Start Live Session" button in Serato's "History" tab.  You may see an on-screen prompt. Press Yes and a web page should open in your browser.  Press "Continue" on the web page to be taken to the Live Playlist Screen.  On the Live Playlist Screen, you'll need to make the playlist public.  To do this select "Edit Details" and change Privacy to "Public".  Press "Save Changes" at the bottom of the screen.  **PLEASE NOTE** I have an issue sometimes where the Live-Playlists button isn't visible. To correct this, go into Serato's Settings > Expansion Packs > Serato Playlist.  Un-Tick the boxes that say "Enable Serato Playlists" and "Enable Live Playlists". Exit the settings screen and then go back and tick both boxes.  This will make the "Start Live Playlist" button appear.
 6. With all the settings on the tool configured, press "Start" and the tool will then begin to update the text files.
+
+## Issues
+If you find any issues with the tool or would like to suggest any improvements, please use the "Issues Tab
