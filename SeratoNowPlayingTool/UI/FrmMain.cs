@@ -169,6 +169,8 @@ namespace NickScotney.SeratoNowPlaying.UI
                 GrpBxParseTime.Enabled = false;
                 GrpBxPreviousTrack.Enabled = false;
 
+                FileController.ClearFiles(TxtBxCurrentTrack.Text, TxtBxPreviousTrack.Text);
+
                 BtnStart.Text = "Stop";
                 BtnSave.Enabled = false;
 

@@ -22,6 +22,9 @@ namespace NickScotney.SeratoNowPlaying.Logic.Helpers
         public static string ParseAddress { set { parseAddress = value; } }
 
 
+        public static void ClearFile(string fileName)
+         => File.WriteAllText(fileName, String.Empty);
+
         public static List<Setting> LoadSettings()
         {
             //  If the folder path hasn't been set, return errorcode 1
