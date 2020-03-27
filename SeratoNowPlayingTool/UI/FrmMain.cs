@@ -84,7 +84,6 @@ namespace NickScotney.SeratoNowPlaying.UI
                 TxtBxPreviousTrack.Text = setting.SettingValue;
             else if (setting == null)
                 settingsList.Add(new Setting { SettingName = "PreviousTrackLabelFile", SettingValue = "" });
-
         }
 
         private void BtnBrowse_Click(object sender, EventArgs e, TextBox textBox)
@@ -119,19 +118,19 @@ namespace NickScotney.SeratoNowPlaying.UI
             var setting = settingsList.First(set => set.SettingName == "ParseTime");
             setting.SettingValue = TxtBxParseTime.Text;
 
-            //  Parse Time
+            //  Parse Address
             setting = settingsList.First(set => set.SettingName == "ParseAddress");
             setting.SettingValue = TxtBxFeedLocation.Text;
 
-            //  Parse Time
+            //  Current Track
             setting = settingsList.First(set => set.SettingName == "CurrentTrackLabelFile");
             setting.SettingValue = TxtBxCurrentTrack.Text;
 
-            //  Parse Time
+            //  Previous Track Enabled
             setting = settingsList.First(set => set.SettingName == "EnablePreviousTrackLabel");
             setting.SettingValue = ChkBxPreviousTrack.Checked.ToString();
 
-            //  Parse Time
+            //   Previous Track
             setting = settingsList.First(set => set.SettingName == "PreviousTrackLabelFile");
             setting.SettingValue = TxtBxPreviousTrack.Text;
 
@@ -139,6 +138,7 @@ namespace NickScotney.SeratoNowPlaying.UI
             {
                 case 0:
                     MessageBox.Show("Settings Saved");
+                    FileController.SetParseAddress(TxtBxFeedLocation.Text);
                     break;
                 case 1:
                     MessageBox.Show("Unable to save - No Folder Path defined");
