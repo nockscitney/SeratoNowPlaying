@@ -60,16 +60,20 @@ namespace NickScotney.SeratoNowPlaying.Logic.Helpers
             var currentTrack = String.Empty;
             var previousTrack = String.Empty;
 
-            var doc = new HtmlWeb().Load(parseAddress);
-            var nodes = doc.DocumentNode.Descendants("div")
-                .Where(div => div.GetAttributeValue("id", "") == "playlist_tracklist").ToList();
+            try
+            {
+                var doc = new HtmlWeb().Load(parseAddress);
+                var nodes = doc.DocumentNode.Descendants("div")
+                    .Where(div => div.GetAttributeValue("id", "") == "playlist_tracklist").ToList();
 
-            //  Get the current track here
-            WriteLabelFiles(currentTrackLabel, GetTrackName(0, nodes));
+                //  Get the current track here
+                WriteLabelFiles(currentTrackLabel, GetTrackName(0, nodes));
 
-            //  Get the previous track if we need it
-            if(!String.IsNullOrEmpty(previousTrackLabel))
-                WriteLabelFiles(previousTrackLabel, GetTrackName(1, nodes));
+                //  Get the previous track if we need it
+                if (!String.IsNullOrEmpty(previousTrackLabel))
+                    WriteLabelFiles(previousTrackLabel, GetTrackName(1, nodes));
+            }
+            catch { }
         }
 
         public static int SaveSettingsFile(List<Setting> settingsList)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.GrpBxParseTime = new System.Windows.Forms.GroupBox();
             this.TxtBxParseTime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -249,10 +250,12 @@
             this.Controls.Add(this.GrpBxCurrentTrack);
             this.Controls.Add(this.GrpBxLocation);
             this.Controls.Add(this.GrpBxParseTime);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(344, 473);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(344, 473);
             this.Name = "FrmMain";
-            this.ShowIcon = false;
             this.Text = "Serato Now Playing Tool";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.GrpBxParseTime.ResumeLayout(false);
