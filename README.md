@@ -10,7 +10,7 @@ This tool will write the current and previous track to a text file, which can th
 Rather than trying to open and read the Serato library files directly (and while they are in use), this tool will leverage the "Live Playlist" feature within Serato DJ.  Once track information is being sent to Serato, the tool will poll your "Live" playlist page and update the text tags accordingly.  More information about Live Playlists  and how to enable it within your Serato DJ can be found here - https://support.serato.com/hc/en-us/articles/228019568-Live-Playlists
 
 ## Setup
-**You must be connected to the internet for this to work**
+**You must be connected to the internet for this to work.  You must also be able to use the Serato Playlists feature within your Serato Account**
 1. Download and install the tool
 2. Once installed, run the tool and configure the settings which are
 ..* Parse Time: The time in milliseconds which the tool will look for updates
