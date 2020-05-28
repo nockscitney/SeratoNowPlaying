@@ -30,16 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.GrpBxParseTime = new System.Windows.Forms.GroupBox();
-            this.TxtBxParseTime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GrpBxLocation = new System.Windows.Forms.GroupBox();
             this.TxtBxFeedLocation = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.GrpBxCurrentTrack = new System.Windows.Forms.GroupBox();
+            this.TxtBxCurrentSuffix = new System.Windows.Forms.TextBox();
+            this.ChkBxCurrentSuffix = new System.Windows.Forms.CheckBox();
+            this.TxtBxCurrentPrefix = new System.Windows.Forms.TextBox();
+            this.ChkBxCurrentPrefix = new System.Windows.Forms.CheckBox();
             this.BtnBrowseCurrent = new System.Windows.Forms.Button();
             this.TxtBxCurrentTrack = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.GrpBxPreviousTrack = new System.Windows.Forms.GroupBox();
+            this.TxtBxPreviousSuffix = new System.Windows.Forms.TextBox();
+            this.ChkBxPreviousSuffix = new System.Windows.Forms.CheckBox();
+            this.TxtBxPreviousPrefix = new System.Windows.Forms.TextBox();
+            this.ChkBxPreviousPrefix = new System.Windows.Forms.CheckBox();
             this.BtnBrowsePrevious = new System.Windows.Forms.Button();
             this.ChkBxPreviousTrack = new System.Windows.Forms.CheckBox();
             this.TxtBxPreviousTrack = new System.Windows.Forms.TextBox();
@@ -47,23 +54,17 @@
             this.BtnClose = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnStart = new System.Windows.Forms.Button();
-            this.ChkBxCurrentPrefix = new System.Windows.Forms.CheckBox();
-            this.TxtBxCurrentPrefix = new System.Windows.Forms.TextBox();
-            this.TxtBxCurrentSuffix = new System.Windows.Forms.TextBox();
-            this.ChkBxCurrentSuffix = new System.Windows.Forms.CheckBox();
-            this.TxtBxPreviousSuffix = new System.Windows.Forms.TextBox();
-            this.ChkBxPreviousSuffix = new System.Windows.Forms.CheckBox();
-            this.TxtBxPreviousPrefix = new System.Windows.Forms.TextBox();
-            this.ChkBxPreviousPrefix = new System.Windows.Forms.CheckBox();
+            this.NudPareTime = new System.Windows.Forms.NumericUpDown();
             this.GrpBxParseTime.SuspendLayout();
             this.GrpBxLocation.SuspendLayout();
             this.GrpBxCurrentTrack.SuspendLayout();
             this.GrpBxPreviousTrack.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NudPareTime)).BeginInit();
             this.SuspendLayout();
             // 
             // GrpBxParseTime
             // 
-            this.GrpBxParseTime.Controls.Add(this.TxtBxParseTime);
+            this.GrpBxParseTime.Controls.Add(this.NudPareTime);
             this.GrpBxParseTime.Controls.Add(this.label1);
             this.GrpBxParseTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GrpBxParseTime.Location = new System.Drawing.Point(13, 13);
@@ -72,15 +73,6 @@
             this.GrpBxParseTime.TabIndex = 0;
             this.GrpBxParseTime.TabStop = false;
             this.GrpBxParseTime.Text = "Feed Parse Time";
-            // 
-            // TxtBxParseTime
-            // 
-            this.TxtBxParseTime.Location = new System.Drawing.Point(14, 55);
-            this.TxtBxParseTime.Name = "TxtBxParseTime";
-            this.TxtBxParseTime.Size = new System.Drawing.Size(279, 20);
-            this.TxtBxParseTime.TabIndex = 1;
-            this.TxtBxParseTime.Text = "10";
-            this.TxtBxParseTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBxParseTime_KeyPress);
             // 
             // label1
             // 
@@ -140,6 +132,46 @@
             this.GrpBxCurrentTrack.TabStop = false;
             this.GrpBxCurrentTrack.Text = "Current Track Label";
             // 
+            // TxtBxCurrentSuffix
+            // 
+            this.TxtBxCurrentSuffix.Enabled = false;
+            this.TxtBxCurrentSuffix.Location = new System.Drawing.Point(101, 102);
+            this.TxtBxCurrentSuffix.Name = "TxtBxCurrentSuffix";
+            this.TxtBxCurrentSuffix.Size = new System.Drawing.Size(192, 20);
+            this.TxtBxCurrentSuffix.TabIndex = 9;
+            // 
+            // ChkBxCurrentSuffix
+            // 
+            this.ChkBxCurrentSuffix.AutoSize = true;
+            this.ChkBxCurrentSuffix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkBxCurrentSuffix.Location = new System.Drawing.Point(14, 104);
+            this.ChkBxCurrentSuffix.Name = "ChkBxCurrentSuffix";
+            this.ChkBxCurrentSuffix.Size = new System.Drawing.Size(81, 17);
+            this.ChkBxCurrentSuffix.TabIndex = 8;
+            this.ChkBxCurrentSuffix.Text = "Label Suffix";
+            this.ChkBxCurrentSuffix.UseVisualStyleBackColor = true;
+            this.ChkBxCurrentSuffix.CheckedChanged += new System.EventHandler(this.ChkBxCurrentSuffix_CheckedChanged);
+            // 
+            // TxtBxCurrentPrefix
+            // 
+            this.TxtBxCurrentPrefix.Enabled = false;
+            this.TxtBxCurrentPrefix.Location = new System.Drawing.Point(101, 76);
+            this.TxtBxCurrentPrefix.Name = "TxtBxCurrentPrefix";
+            this.TxtBxCurrentPrefix.Size = new System.Drawing.Size(192, 20);
+            this.TxtBxCurrentPrefix.TabIndex = 7;
+            // 
+            // ChkBxCurrentPrefix
+            // 
+            this.ChkBxCurrentPrefix.AutoSize = true;
+            this.ChkBxCurrentPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkBxCurrentPrefix.Location = new System.Drawing.Point(14, 78);
+            this.ChkBxCurrentPrefix.Name = "ChkBxCurrentPrefix";
+            this.ChkBxCurrentPrefix.Size = new System.Drawing.Size(81, 17);
+            this.ChkBxCurrentPrefix.TabIndex = 6;
+            this.ChkBxCurrentPrefix.Text = "Label Prefix";
+            this.ChkBxCurrentPrefix.UseVisualStyleBackColor = true;
+            this.ChkBxCurrentPrefix.CheckedChanged += new System.EventHandler(this.ChkBxCurrentPrefix_CheckedChanged);
+            // 
             // BtnBrowseCurrent
             // 
             this.BtnBrowseCurrent.Location = new System.Drawing.Point(243, 50);
@@ -184,6 +216,48 @@
             this.GrpBxPreviousTrack.TabIndex = 3;
             this.GrpBxPreviousTrack.TabStop = false;
             this.GrpBxPreviousTrack.Text = "Previous Track Label";
+            // 
+            // TxtBxPreviousSuffix
+            // 
+            this.TxtBxPreviousSuffix.Enabled = false;
+            this.TxtBxPreviousSuffix.Location = new System.Drawing.Point(101, 128);
+            this.TxtBxPreviousSuffix.Name = "TxtBxPreviousSuffix";
+            this.TxtBxPreviousSuffix.Size = new System.Drawing.Size(192, 20);
+            this.TxtBxPreviousSuffix.TabIndex = 13;
+            // 
+            // ChkBxPreviousSuffix
+            // 
+            this.ChkBxPreviousSuffix.AutoSize = true;
+            this.ChkBxPreviousSuffix.Enabled = false;
+            this.ChkBxPreviousSuffix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkBxPreviousSuffix.Location = new System.Drawing.Point(14, 130);
+            this.ChkBxPreviousSuffix.Name = "ChkBxPreviousSuffix";
+            this.ChkBxPreviousSuffix.Size = new System.Drawing.Size(81, 17);
+            this.ChkBxPreviousSuffix.TabIndex = 12;
+            this.ChkBxPreviousSuffix.Text = "Label Suffix";
+            this.ChkBxPreviousSuffix.UseVisualStyleBackColor = true;
+            this.ChkBxPreviousSuffix.CheckedChanged += new System.EventHandler(this.ChkBxPreviousSuffix_CheckedChanged);
+            // 
+            // TxtBxPreviousPrefix
+            // 
+            this.TxtBxPreviousPrefix.Enabled = false;
+            this.TxtBxPreviousPrefix.Location = new System.Drawing.Point(101, 102);
+            this.TxtBxPreviousPrefix.Name = "TxtBxPreviousPrefix";
+            this.TxtBxPreviousPrefix.Size = new System.Drawing.Size(192, 20);
+            this.TxtBxPreviousPrefix.TabIndex = 11;
+            // 
+            // ChkBxPreviousPrefix
+            // 
+            this.ChkBxPreviousPrefix.AutoSize = true;
+            this.ChkBxPreviousPrefix.Enabled = false;
+            this.ChkBxPreviousPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkBxPreviousPrefix.Location = new System.Drawing.Point(14, 104);
+            this.ChkBxPreviousPrefix.Name = "ChkBxPreviousPrefix";
+            this.ChkBxPreviousPrefix.Size = new System.Drawing.Size(81, 17);
+            this.ChkBxPreviousPrefix.TabIndex = 10;
+            this.ChkBxPreviousPrefix.Text = "Label Prefix";
+            this.ChkBxPreviousPrefix.UseVisualStyleBackColor = true;
+            this.ChkBxPreviousPrefix.CheckedChanged += new System.EventHandler(this.ChkBxPreviousPrefix_CheckedChanged);
             // 
             // BtnBrowsePrevious
             // 
@@ -254,87 +328,27 @@
             this.BtnStart.UseVisualStyleBackColor = true;
             this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
-            // ChkBxCurrentPrefix
+            // NudPareTime
             // 
-            this.ChkBxCurrentPrefix.AutoSize = true;
-            this.ChkBxCurrentPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkBxCurrentPrefix.Location = new System.Drawing.Point(14, 78);
-            this.ChkBxCurrentPrefix.Name = "ChkBxCurrentPrefix";
-            this.ChkBxCurrentPrefix.Size = new System.Drawing.Size(81, 17);
-            this.ChkBxCurrentPrefix.TabIndex = 6;
-            this.ChkBxCurrentPrefix.Text = "Label Prefix";
-            this.ChkBxCurrentPrefix.UseVisualStyleBackColor = true;
-            this.ChkBxCurrentPrefix.CheckedChanged += new System.EventHandler(this.ChkBxCurrentPrefix_CheckedChanged);
-            // 
-            // TxtBxCurrentPrefix
-            // 
-            this.TxtBxCurrentPrefix.Enabled = false;
-            this.TxtBxCurrentPrefix.Location = new System.Drawing.Point(101, 76);
-            this.TxtBxCurrentPrefix.Name = "TxtBxCurrentPrefix";
-            this.TxtBxCurrentPrefix.Size = new System.Drawing.Size(192, 20);
-            this.TxtBxCurrentPrefix.TabIndex = 7;
-            // 
-            // TxtBxCurrentSuffix
-            // 
-            this.TxtBxCurrentSuffix.Enabled = false;
-            this.TxtBxCurrentSuffix.Location = new System.Drawing.Point(101, 102);
-            this.TxtBxCurrentSuffix.Name = "TxtBxCurrentSuffix";
-            this.TxtBxCurrentSuffix.Size = new System.Drawing.Size(192, 20);
-            this.TxtBxCurrentSuffix.TabIndex = 9;
-            // 
-            // ChkBxCurrentSuffix
-            // 
-            this.ChkBxCurrentSuffix.AutoSize = true;
-            this.ChkBxCurrentSuffix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkBxCurrentSuffix.Location = new System.Drawing.Point(14, 104);
-            this.ChkBxCurrentSuffix.Name = "ChkBxCurrentSuffix";
-            this.ChkBxCurrentSuffix.Size = new System.Drawing.Size(81, 17);
-            this.ChkBxCurrentSuffix.TabIndex = 8;
-            this.ChkBxCurrentSuffix.Text = "Label Suffix";
-            this.ChkBxCurrentSuffix.UseVisualStyleBackColor = true;
-            this.ChkBxCurrentSuffix.CheckedChanged += new System.EventHandler(this.ChkBxCurrentSuffix_CheckedChanged);
-            // 
-            // TxtBxPreviousSuffix
-            // 
-            this.TxtBxPreviousSuffix.Enabled = false;
-            this.TxtBxPreviousSuffix.Location = new System.Drawing.Point(101, 128);
-            this.TxtBxPreviousSuffix.Name = "TxtBxPreviousSuffix";
-            this.TxtBxPreviousSuffix.Size = new System.Drawing.Size(192, 20);
-            this.TxtBxPreviousSuffix.TabIndex = 13;
-            // 
-            // ChkBxPreviousSuffix
-            // 
-            this.ChkBxPreviousSuffix.AutoSize = true;
-            this.ChkBxPreviousSuffix.Enabled = false;
-            this.ChkBxPreviousSuffix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkBxPreviousSuffix.Location = new System.Drawing.Point(14, 130);
-            this.ChkBxPreviousSuffix.Name = "ChkBxPreviousSuffix";
-            this.ChkBxPreviousSuffix.Size = new System.Drawing.Size(81, 17);
-            this.ChkBxPreviousSuffix.TabIndex = 12;
-            this.ChkBxPreviousSuffix.Text = "Label Suffix";
-            this.ChkBxPreviousSuffix.UseVisualStyleBackColor = true;
-            this.ChkBxPreviousSuffix.CheckedChanged += new System.EventHandler(this.ChkBxPreviousSuffix_CheckedChanged);
-            // 
-            // TxtBxPreviousPrefix
-            // 
-            this.TxtBxPreviousPrefix.Enabled = false;
-            this.TxtBxPreviousPrefix.Location = new System.Drawing.Point(101, 102);
-            this.TxtBxPreviousPrefix.Name = "TxtBxPreviousPrefix";
-            this.TxtBxPreviousPrefix.Size = new System.Drawing.Size(192, 20);
-            this.TxtBxPreviousPrefix.TabIndex = 11;
-            // 
-            // ChkBxPreviousPrefix
-            // 
-            this.ChkBxPreviousPrefix.AutoSize = true;
-            this.ChkBxPreviousPrefix.Enabled = false;
-            this.ChkBxPreviousPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkBxPreviousPrefix.Location = new System.Drawing.Point(14, 104);
-            this.ChkBxPreviousPrefix.Name = "ChkBxPreviousPrefix";
-            this.ChkBxPreviousPrefix.Size = new System.Drawing.Size(81, 17);
-            this.ChkBxPreviousPrefix.TabIndex = 10;
-            this.ChkBxPreviousPrefix.Text = "Label Prefix";
-            this.ChkBxPreviousPrefix.UseVisualStyleBackColor = true;
-            this.ChkBxPreviousPrefix.CheckedChanged += new System.EventHandler(this.ChkBxPreviousPrefix_CheckedChanged);
+            this.NudPareTime.Location = new System.Drawing.Point(14, 54);
+            this.NudPareTime.Maximum = new decimal(new int[] {
+            900,
+            0,
+            0,
+            0});
+            this.NudPareTime.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.NudPareTime.Name = "NudPareTime";
+            this.NudPareTime.Size = new System.Drawing.Size(279, 20);
+            this.NudPareTime.TabIndex = 2;
+            this.NudPareTime.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // FrmMain
             // 
@@ -364,6 +378,7 @@
             this.GrpBxCurrentTrack.PerformLayout();
             this.GrpBxPreviousTrack.ResumeLayout(false);
             this.GrpBxPreviousTrack.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NudPareTime)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -371,7 +386,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox GrpBxParseTime;
-        private System.Windows.Forms.TextBox TxtBxParseTime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox GrpBxLocation;
         private System.Windows.Forms.Label label2;
@@ -396,6 +410,7 @@
         private System.Windows.Forms.CheckBox ChkBxPreviousSuffix;
         private System.Windows.Forms.TextBox TxtBxPreviousPrefix;
         private System.Windows.Forms.CheckBox ChkBxPreviousPrefix;
+        private System.Windows.Forms.NumericUpDown NudPareTime;
     }
 }
 

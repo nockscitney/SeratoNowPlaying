@@ -41,11 +41,11 @@ namespace NickScotney.SeratoNowPlaying.UI
             }
 
             //  Parse Time
-            LoadSetting(TxtBxParseTime, "ParseTime", "10000");
+            LoadSetting(NudPareTime, "ParseTime", "10");
 
             //  Check here to see if we're usng Seconds or milliseconds.  If the latter, divide the total by 1000
-            if (int.Parse(TxtBxParseTime.Text) >= 1000)
-                TxtBxParseTime.Text = (int.Parse(TxtBxParseTime.Text) / 1000).ToString();
+            if (NudPareTime.Value > 900)
+                NudPareTime.Value = NudPareTime.Value / 1000;
 
             //  Parse Address
             LoadSetting(TxtBxFeedLocation, "ParseAddress");
@@ -106,7 +106,7 @@ namespace NickScotney.SeratoNowPlaying.UI
         private void BtnSave_Click(object sender, EventArgs e)
         {
             //  Parse Time
-            SaveSetting(TxtBxParseTime, "ParseTime");
+            SaveSetting(NudPareTime, "ParseTime");
 
             //  Parse Address
             SaveSetting(TxtBxFeedLocation, "ParseAddress");
@@ -232,6 +232,11 @@ namespace NickScotney.SeratoNowPlaying.UI
 
                 if (controlType == typeof(CheckBox))
                     ((CheckBox)formControl).Checked = Boolean.Parse(setting.SettingValue);
+                else if (controlType == typeof(NumericUpDown))
+                    if (Decimal.Parse(setting.SettingValue) > ((NumericUpDown)formControl).Maximum)
+                        ((NumericUpDown)formControl).Value = ((NumericUpDown)formControl).Maximum;
+                    else
+                        ((NumericUpDown)formControl).Value = Decimal.Parse(setting.SettingValue);
                 else if (controlType == typeof(TextBox))
                     ((TextBox)formControl).Text = setting.SettingValue;
             }
@@ -252,6 +257,8 @@ namespace NickScotney.SeratoNowPlaying.UI
 
             if (controlType == typeof(CheckBox))
                 setting.SettingValue = ((CheckBox)formControl).Checked.ToString();
+            else if (controlType == typeof(NumericUpDown))
+                setting.SettingValue = ((NumericUpDown)formControl).Value.ToString();
             else if (controlType == typeof(TextBox))
                 setting.SettingValue = ((TextBox)formControl).Text;               
         }
@@ -295,7 +302,7 @@ namespace NickScotney.SeratoNowPlaying.UI
             while (true)
             {
                 FileController.ReadHtml(currentTrack, previousTrack);
-                Thread.Sleep(int.Parse(TxtBxParseTime.Text) * 1000);
+                Thread.Sleep((int)NudPareTime.Value * 1000);
             }
         }
     }
