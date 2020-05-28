@@ -1,8 +1,8 @@
 # SeratoNowPlaying
 A tool which allows users to get the currently (and previously) playing track names from Serato DJ
 
-## Current Version (1.0.2.0)
-Dowload the Current Version Here: https://github.com/nockscitney/SeratoNowPlaying/releases/tag/1.0.2.0
+## Current Version (1.1.0.0)
+Dowload the Current Version Here: https://github.com/nockscitney/SeratoNowPlaying/releases/tag/1.1.0
 
 ## About
 This tool will write the current and previous track to a text file, which can then be used by streaming services such as IceCast & BUTT.  It can also be used directly by broadcasting software such as OBS Studio, to update an on screen text field.
