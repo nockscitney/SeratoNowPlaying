@@ -51,6 +51,7 @@
     <Compile Include="Controllers\SettingController.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Models\Setting.cs" />
+    <Compile Include="Models\TrackLabel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

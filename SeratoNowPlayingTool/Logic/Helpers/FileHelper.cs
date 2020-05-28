@@ -17,7 +17,6 @@ namespace NickScotney.SeratoNowPlaying.Logic.Helpers
         static string folderLocation;
         static string parseAddress;
 
-
         public static string FolderLocation { set { folderLocation = value; } }
         public static string ParseAddress { set { parseAddress = value; } }
 
@@ -58,23 +57,37 @@ namespace NickScotney.SeratoNowPlaying.Logic.Helpers
             return settingsList;
         }
 
-        public static void GetTrackNames(string currentTrackLabel, string previousTrackLabel)
+        public static void GetTrackNames(TrackLabel currentTrack, TrackLabel previousTrack, ref string currentTrackName, ref string previousTrackName)
         {
-            var currentTrack = String.Empty;
-            var previousTrack = String.Empty;
-
             try
             {
+                //  Get the HTML document nodes here
                 var doc = new HtmlWeb().Load(parseAddress);
                 var nodes = doc.DocumentNode.Descendants("div")
                     .Where(div => div.GetAttributeValue("id", "") == "playlist_tracklist").ToList();
 
-                //  Get the current track here
-                WriteLabelFiles(currentTrackLabel, GetTrackName(0, nodes));
+                //  Get the current track names here from Serato Live
+                string[] currentTracks = new string[2];
+                currentTracks[0] = GetTrackName(0, nodes);
+                currentTracks[1] = GetTrackName(1, nodes);
 
-                //  Get the previous track if we need it
-                if (!String.IsNullOrEmpty(previousTrackLabel))
-                    WriteLabelFiles(previousTrackLabel, GetTrackName(1, nodes));
+                //  Check here to see if there was an update in either of the track names
+                if ((currentTracks[0] != currentTrackName) || currentTracks[1] != previousTrackName)
+                {
+                    //  Check to see if we need to write the new track names here
+                    if (currentTracks[0] != currentTrackName)
+                    {
+                        WriteLabelFiles(currentTrack, currentTracks[0]);
+                        currentTrackName = currentTracks[0];
+                    }
+
+                    //  Only write the previous track if wee  have the setting enables and the name is different
+                    if ((previousTrack != null) && currentTracks[1] != previousTrackName)
+                    {
+                        WriteLabelFiles(previousTrack, currentTracks[1]);
+                        previousTrackName = currentTracks[1];
+                    }
+                }
             }
             catch { }
         }
@@ -141,16 +154,26 @@ namespace NickScotney.SeratoNowPlaying.Logic.Helpers
             return trackName;
         }
 
-        static void WriteLabelFiles(string labelLocation, string labelValue)
+        static void WriteLabelFiles(TrackLabel trackLabel, string labelValue)
         {
             //  If the file doesn't exist, create it
-            if (!File.Exists(labelLocation))
-                File.Create(labelLocation);
+            if (!File.Exists(trackLabel.LabelLocation))
+                File.Create(trackLabel.LabelLocation);
 
             //  Write the data to the label file here
-            using (var writer = new StreamWriter(labelLocation))
+            using (var writer = new StreamWriter(trackLabel.LabelLocation))
             {
-                writer.Write(labelValue);
+                var output = String.Empty;
+
+                if (!String.IsNullOrEmpty(trackLabel.LabelPrefix))
+                    output += $"{trackLabel.LabelPrefix} ";
+
+                output += labelValue;
+
+                if (!String.IsNullOrEmpty(trackLabel.LabelSuffix))
+                    output += $" {trackLabel.LabelSuffix}";
+
+                writer.WriteLine(output);
                 writer.Close();
             }
         }
