@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.GrpBxParseTime = new System.Windows.Forms.GroupBox();
+            this.NudPareTime = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.GrpBxLocation = new System.Windows.Forms.GroupBox();
             this.TxtBxFeedLocation = new System.Windows.Forms.TextBox();
@@ -54,12 +55,11 @@
             this.BtnClose = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnStart = new System.Windows.Forms.Button();
-            this.NudPareTime = new System.Windows.Forms.NumericUpDown();
             this.GrpBxParseTime.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NudPareTime)).BeginInit();
             this.GrpBxLocation.SuspendLayout();
             this.GrpBxCurrentTrack.SuspendLayout();
             this.GrpBxPreviousTrack.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NudPareTime)).BeginInit();
             this.SuspendLayout();
             // 
             // GrpBxParseTime
@@ -73,6 +73,28 @@
             this.GrpBxParseTime.TabIndex = 0;
             this.GrpBxParseTime.TabStop = false;
             this.GrpBxParseTime.Text = "Feed Parse Time";
+            // 
+            // NudPareTime
+            // 
+            this.NudPareTime.Location = new System.Drawing.Point(14, 54);
+            this.NudPareTime.Maximum = new decimal(new int[] {
+            900,
+            0,
+            0,
+            0});
+            this.NudPareTime.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.NudPareTime.Name = "NudPareTime";
+            this.NudPareTime.Size = new System.Drawing.Size(279, 20);
+            this.NudPareTime.TabIndex = 2;
+            this.NudPareTime.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
@@ -328,28 +350,6 @@
             this.BtnStart.UseVisualStyleBackColor = true;
             this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
-            // NudPareTime
-            // 
-            this.NudPareTime.Location = new System.Drawing.Point(14, 54);
-            this.NudPareTime.Maximum = new decimal(new int[] {
-            900,
-            0,
-            0,
-            0});
-            this.NudPareTime.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.NudPareTime.Name = "NudPareTime";
-            this.NudPareTime.Size = new System.Drawing.Size(279, 20);
-            this.NudPareTime.TabIndex = 2;
-            this.NudPareTime.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,13 +372,13 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.GrpBxParseTime.ResumeLayout(false);
             this.GrpBxParseTime.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NudPareTime)).EndInit();
             this.GrpBxLocation.ResumeLayout(false);
             this.GrpBxLocation.PerformLayout();
             this.GrpBxCurrentTrack.ResumeLayout(false);
             this.GrpBxCurrentTrack.PerformLayout();
             this.GrpBxPreviousTrack.ResumeLayout(false);
             this.GrpBxPreviousTrack.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NudPareTime)).EndInit();
             this.ResumeLayout(false);
 
         }

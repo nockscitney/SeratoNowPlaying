@@ -85,7 +85,16 @@ namespace NickScotney.SeratoNowPlaying.UI
             };
 
             if (ofd.ShowDialog() == DialogResult.OK)
-                textBox.Text = ofd.FileName;
+            {
+
+                if (ofd.FileName.IndexOfAny(System.IO.Path.GetInvalidPathChars()) >= 0)
+                {
+                    MessageBox.Show("Invalid Characters were used in the file path.  Please Check the file name and path and try again", "Illegal Characters in File Path", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    BtnBrowse_Click(sender, e, textBox);
+                }
+                else
+                    textBox.Text = ofd.FileName;
+            }
 
             ofd.Dispose();
         }
@@ -167,6 +176,18 @@ namespace NickScotney.SeratoNowPlaying.UI
                 GrpBxLocation.Enabled = false;
                 GrpBxParseTime.Enabled = false;
                 GrpBxPreviousTrack.Enabled = false;
+
+                if (TxtBxCurrentTrack.Text.Contains("<<fillpath>>"))
+                {
+                    MessageBox.Show("Location for current track hasn't been changed - The tool needs a text file to write to.  Please select a text file for the current track and try again", "Invalid File location", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    GrpBxCurrentTrack.Enabled = true;
+                    GrpBxLocation.Enabled = true;
+                    GrpBxParseTime.Enabled = true;
+                    GrpBxPreviousTrack.Enabled = true;
+
+                    return;
+                }
 
                 FileController.ClearFiles(TxtBxCurrentTrack.Text, TxtBxPreviousTrack.Text);
                 FileController.SetParseAddress(TxtBxFeedLocation.Text);
