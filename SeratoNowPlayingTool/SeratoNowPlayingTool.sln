@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Z-SetupProject", "Z-SetupProject\Z-SetupProject.vdproj", "{8432BF12-8D60-4F1A-930B-A3C7E420F864}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console-Core", "Console-Core\Console-Core.csproj", "{E7BBCAEF-69F5-40B8-8803-BCC3EC1AF906}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{7AE35E21-3B9C-4B40-9E9F-FEC687AE7115}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8432BF12-8D60-4F1A-930B-A3C7E420F864}.Debug|Any CPU.ActiveCfg = Debug
 		{8432BF12-8D60-4F1A-930B-A3C7E420F864}.Release|Any CPU.ActiveCfg = Release
+		{E7BBCAEF-69F5-40B8-8803-BCC3EC1AF906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7BBCAEF-69F5-40B8-8803-BCC3EC1AF906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7BBCAEF-69F5-40B8-8803-BCC3EC1AF906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7BBCAEF-69F5-40B8-8803-BCC3EC1AF906}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

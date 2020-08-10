@@ -14,6 +14,8 @@ Rather than trying to open and read the Serato library files directly (and while
 
 A step by step video for configuring Serato Now Playing has been created by  a member on the Serato DJ Forums (9807852) and can be found here: https://drive.google.com/open?id=1IhNut9AnhNJ7z8J2hwvhJFlmJKoTcB2s
 
+An alternative tutorial has been created by DJ Lazy Eyez, which can also be found here - https://www.youtube.com/watch?v=coX1m5A_GEQ
+
 1. Download and install the tool
 2. Once installed, run the tool and configure the settings which are
 ..* Parse Time: The time in milliseconds which the tool will look for updates
