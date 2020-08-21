@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>NickScotney.SeratoNowPlaying.Lite</RootNamespace>
+    <AssemblyName>SeratoNowPlaying-Lite</AssemblyName>
+    <ApplicationIcon>Resources\serato.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\serato.ico" />
+    <None Remove="Resources\serato.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\serato.ico" />
+    <Content Include="Resources\serato.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="5.0.0-preview.7.20364.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Logic\Logic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

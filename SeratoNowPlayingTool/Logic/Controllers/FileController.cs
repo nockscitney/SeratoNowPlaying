@@ -16,10 +16,6 @@ namespace NickScotney.SeratoNowPlaying.Logic.Controllers
 
             if (!string.IsNullOrEmpty(previousTrack))
                 FileHelper.ClearFile(previousTrack);
-
-            //  Clear any value from the local track variables here
-            currentTrack = String.Empty;
-            previousTrack = String.Empty;
         }
 
         public static void ReadHtml(TrackLabel currentTrack, TrackLabel previousTrack)

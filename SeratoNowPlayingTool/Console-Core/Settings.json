@@ -1,0 +1,14 @@
+[
+  {
+    "SettingName": "ParseTime",
+    "SettingValue": "10000"
+  },
+  {
+    "SettingName": "ParseAddress",
+    "SettingValue": "https://serato.com/playlists/<<profilename>>/live"
+  },
+  {
+    "SettingName": "CurrentTrackLabelFile",
+    "SettingValue": "<<fillpath>>\\CurrentTrack.txt"
+  }
+]

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Z-SetupProject", "Z-SetupProject\Z-SetupProject.vdproj", "{8432BF12-8D60-4F1A-930B-A3C7E420F864}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console-Core", "Console-Core\Console-Core.csproj", "{E7BBCAEF-69F5-40B8-8803-BCC3EC1AF906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lite", "Console-Core\Lite.csproj", "{E7BBCAEF-69F5-40B8-8803-BCC3EC1AF906}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
