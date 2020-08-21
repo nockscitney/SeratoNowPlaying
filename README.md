@@ -4,7 +4,7 @@ A tool which allows users to get the currently (and previously) playing track na
 ## Current Version (1.1.0.2)
 Dowload the Current Version Here: https://github.com/nockscitney/SeratoNowPlaying/releases/tag/1.1.0.2
 
-#SeratoNowPlaying-Lite (Pre-Release)
+# SeratoNowPlaying-Lite (Pre-Release)
 I have now ported over a lite version to the .net Core framework.  This has been tested on Windows, but I am yet to confirm whether it works on Mac.  The pre-release can be found here (Use at Own Risk): https://github.com/nockscitney/SeratoNowPlaying/releases/tag/snpl-pr-0.9
 
 ## About
