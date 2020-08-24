@@ -6,6 +6,10 @@
     <RootNamespace>NickScotney.SeratoNowPlaying.Lite</RootNamespace>
     <AssemblyName>SeratoNowPlaying-Lite</AssemblyName>
     <ApplicationIcon>Resources\serato.ico</ApplicationIcon>
+    <Platforms>AnyCPU;x64</Platforms>
+    <Authors>Nick Scotney</Authors>
+    <Description>A console application which will save the currently playing track on Serato to a Text File</Description>
+    <PackageProjectUrl>https://github.com/nockscitney/SeratoNowPlaying/</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

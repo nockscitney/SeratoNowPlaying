@@ -153,7 +153,9 @@ namespace NickScotney.SeratoNowPlaying.Lite
             TrackLabel currentTrack = new TrackLabel
             {
                 LabelLocation = currentTrackLabel
-            };            
+            };
+
+            Console.WriteLine("Application is Running . . . Close to Stop");
 
             while (true)
             {
