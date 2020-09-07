@@ -10,6 +10,8 @@
     <Authors>Nick Scotney</Authors>
     <Description>A console application which will save the currently playing track on Serato to a Text File</Description>
     <PackageProjectUrl>https://github.com/nockscitney/SeratoNowPlaying/</PackageProjectUrl>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,11 +1,13 @@
 # SeratoNowPlaying
-A tool which allows users to get the currently (and previously) playing track names from Serato DJ
+A tool which allows users to get the currently (and previously) playing track names from Serato DJ.  This is split into two different applications, depending on your operating system.
+- **Windows Users:** Use SeratoNowPlaying
+- **Mac Users:** Use SeratoNowPlaying-Lite
 
-## Current Version (1.1.0.2)
-Dowload the Current Version Here: https://github.com/nockscitney/SeratoNowPlaying/releases/tag/1.1.0.2
+## Current Version (1.1.1.0)
+Dowload the Current Version Here: https://github.com/nockscitney/SeratoNowPlaying/releases/tag/1.1.1.0
 
-## SeratoNowPlaying-Lite (1.0.0.0)
-I have now ported over a lite version to the .net Core framework.  This has been tested on both Windows and Mac and detailed install / setup instructions can be found below.: https://github.com/nockscitney/SeratoNowPlaying/releases/tag/snpl1.0.0.0
+## SeratoNowPlaying-Lite (1.0.1.0)
+I have now ported over a lite version to the .net Core framework.  This has been tested on both Windows and Mac and detailed install / setup instructions can be found below.: https://github.com/nockscitney/SeratoNowPlaying/releases/tag/snpl-1.0.1.0
 
 ## About
 This tool will write the current and previous track to a text file, which can then be used by streaming services such as IceCast & BUTT.  It can also be used directly by broadcasting software such as OBS Studio, to update an on screen text field.

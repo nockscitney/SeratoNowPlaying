@@ -168,7 +168,7 @@ namespace NickScotney.SeratoNowPlaying.Logic.Helpers
                 if (!String.IsNullOrEmpty(trackLabel.LabelPrefix))
                     output += $"{trackLabel.LabelPrefix} ";
 
-                output += labelValue;
+                output += $"     {labelValue}     ";
 
                 if (!String.IsNullOrEmpty(trackLabel.LabelSuffix))
                     output += $" {trackLabel.LabelSuffix}";
